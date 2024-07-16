@@ -1,0 +1,131 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 36px 16px;
+    color: black;
+    max-width: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    flex-grow: 3;
+}
+
+.logo {
+    flex-grow: 1;
+}
+
+.join-block {
+    flex-grow: 1;
+
+    text-align: right;
+}
+
+input[type="checkbox"],
+label {
+    display: none;
+}
+
+.join,
+.started {
+    background-color: orangered;
+    border: none;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.join:hover,
+.started:hover {
+    opacity: 0.7;
+}
+
+
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 10px;
+        position: absolute;
+        top: 20px;
+        left: 10%;
+        width: 70%;
+        padding: 20px;
+
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu-item {
+        margin: 12px 0px;
+    }
+
+
+    label {
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        margin-left: auto;
+        z-index: 1;
+        margin-left: 20px;
+    }
+
+    label span,
+    label span::before,
+    label span::after {
+        width: 25px;
+        height: 2px;
+        background-color: black;
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+
+    }
+
+    label span {
+        top: 15px;
+    }
+
+    label span::before {
+        top: -8px;
+    }
+
+    label span::after {
+        top: 8px;
+    }
+
+    nav {
+        order: 1;
+    }
+
+    input[type="checkbox"]:checked~.nav-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type="checkbox"]:checked~label span{
+        transform: rotate(-45deg) ;
+    }
+
+    input[type="checkbox"]:checked~label span::before{
+        top: 0;
+    }
+
+    input[type="checkbox"]:checked~label span::after{
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+}
